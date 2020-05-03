@@ -1,5 +1,5 @@
 import 'package:duet/locator.dart';
-import 'package:duet/screens/login_page.dart';
+import 'package:duet/screens/auth_view.dart';
 import 'package:duet/services/navigation_services.dart';
 import 'package:duet/services/router_services.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       navigatorKey: locator<NavigationServices>().navigationKey,
       onGenerateRoute: generateRoute,
-      home: LoginPage()
+      home: AuthView()
     );
   }
 }

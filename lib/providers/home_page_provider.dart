@@ -4,16 +4,13 @@ import 'package:duet/services/navigation_services.dart';
 import 'package:duet/utilities/router_constants.dart';
 import 'package:stacked/_base_viewmodels.dart';
 
-class AuthViewProvider extends BaseViewModel{
+class HomePageProvider extends BaseViewModel {
   final AuthServices _authServices = locator<AuthServices>();
   final NavigationServices _navigationServices = locator<NavigationServices>();
 
-  Future handleAuthLogin() async{
-    var hasLogin = await _authServices.getUser();
-    if(hasLogin?.uid != null){
-      _navigationServices.navigateTo(HomePageRoute);
-    }else{
-      _navigationServices.navigateTo(LoginPageRoute);
-    }
+  Future logout() async {
+    await _authServices.logout();
+    _navigationServices.navigateTo(AuthViewPageRoute);
+    notifyListeners();
   }
 }

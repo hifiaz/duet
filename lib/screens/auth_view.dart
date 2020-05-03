@@ -6,12 +6,11 @@ class AuthView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<AuthViewProvider>.reactive(
-      viewModelBuilder: () => AuthViewProvider(),
-      onModelReady: (model) => model.handleAuthLogic(),
-      builder: (_, model, __) => Scaffold(
-          body: Center(
-        child: CircularProgressIndicator(),
-      )),
+      viewModelBuilder: () =>AuthViewProvider(),
+      onModelReady: (model) => model.handleAuthLogin(),
+      builder: (_,model,__)=> Scaffold(
+        body:Center(child: CircularProgressIndicator(),)
+      ),
     );
   }
 }

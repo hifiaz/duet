@@ -1,3 +1,4 @@
+import 'package:duet/screens/auth_view.dart';
 import 'package:duet/screens/home_page.dart';
 import 'package:duet/screens/login_page.dart';
 import 'package:duet/screens/undifine_page.dart';
@@ -6,6 +7,8 @@ import 'package:flutter/material.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings){
   switch (settings.name) {
+    case AuthViewPageRoute:
+      return MaterialPageRoute(builder: (context) => AuthView());
     case HomePageRoute:
       return MaterialPageRoute(builder: (context) => HomePage());
     case LoginPageRoute:
